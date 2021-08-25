@@ -138,3 +138,20 @@ const App = () => {
 export default App;
 ```
 
+
+
+---
+
+### Menambahkan theme dan layout
+
+```js
+// src/styled/theme.js
+
+export const primary   = "#4adad1"
+export const secondary = "#f6a420"
+export const tertiary  = "#01514a"
+export const light     = "#ffffff"
+export const dark      = "#000000"
+export const grey      = "#bcb3b3"
+
+```
