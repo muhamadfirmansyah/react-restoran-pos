@@ -155,3 +155,64 @@ export const dark      = "#000000"
 export const grey      = "#bcb3b3"
 
 ```
+
+### Membuat komponen produk card
+
+```js
+// src/components/ProductCard.js
+
+import React from 'react'
+import styled from 'styled-components'
+
+const Card = styled.div`
+    width: 17%;
+    height: 12rem;
+    cursor: pointer;
+`;
+
+const CardImg = styled.img`
+    width: 100%;
+    height: 50%;
+`;
+
+const NamePrice = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
+const ProductCard = ({ item }) => {
+    return (
+        <Card>
+            <CardImg src={item.image.default} alt="Gambar" />
+            <NamePrice>
+                <p>{item.name}</p>
+                <p>{item.price}</p>
+            </NamePrice>
+        </Card>
+    )
+}
+
+export default ProductCard;
+```
+
+```js
+// src/store/reducers/productReducer.js
+
+import { products } from '../../utils/data'
+
+const initialState = {
+    products: products,
+    carts: []
+}
+
+const productReducer = (state = initialState, action) => {
+    const { type, payload } = action
+
+    switch (type) {
+        default:
+            return state;
+    }
+}
+
+export default productReducer;
+```
