@@ -489,3 +489,18 @@ const CalculateBox = () => {
 
 export default CalculateBox;
 ```
+
+---
+
+### Membuat Fungsi Tambah Product ke Cart
+
+```js
+// src/store/actions/product.js
+
+export const addCart = id => {
+    return {
+        type: "ADD_TO_CART",
+        payload: id
+    }
+}
+```

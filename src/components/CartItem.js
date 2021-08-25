@@ -35,14 +35,14 @@ const CounterTotal = styled.div`
     margin: 0 0.3rem;
 `
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
 
     const [ count, setCount ] = useState(1)
 
     return (
         <Cart>
             <ItemName>
-                name
+                { item.name }
             </ItemName>
             <CounterContainer>
                 <Counter inc />
@@ -50,7 +50,7 @@ const CartItem = () => {
                 <Counter />
             </CounterContainer>
             <Price>
-                27000
+                { item.price }
             </Price>
         </Cart>
     )
