@@ -17,11 +17,11 @@ const CounterStyle = styled.div`
 const Counter = ({inc, dec}) => {
     if (inc) {
         return (
-            <CounterStyle>+</CounterStyle>
+            <CounterStyle onClick={inc}>+</CounterStyle>
         )
     } else {
         return (
-            <CounterStyle>-</CounterStyle>
+            <CounterStyle onClick={dec}>-</CounterStyle>
         )
     }
 }
