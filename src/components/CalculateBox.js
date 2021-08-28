@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import styled from 'styled-components';
 import Button from './Button';
@@ -49,23 +50,36 @@ const BtnBox = styled.div`
 `
 
 const CalculateBox = () => {
+
+    const carts = useSelector(state => state.product.carts);
+    const total = carts.reduce((totalPrice, current) => totalPrice + current.price, 0);
+
+    const [pay, setPay] = useState(0);
+    const [change, setChange] = useState(0);
+
+    const calculate = () => {
+        if (pay > total) {
+            setChange(pay - total);
+        }
+    }
+
     return (
         <Box>
             <Total>
                 <h4>Total</h4>
-                <b>23000</b>
+                <b>{total}</b>
             </Total>
             <Pay>
                 <p>Jumlah Bayar</p>
-                <input type="number" />
+                <input type="number" onChange={(e) => setPay(e.target.value)} />
             </Pay>
             <Change>
                 <p>Kembalian</p>
-                <p>10000</p>
+                <p>{change}</p>
             </Change>
             <BtnBox>
                 <Button />
-                <Button primary />
+                <Button primary action={calculate} />
             </BtnBox>
         </Box>
     )
