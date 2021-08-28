@@ -2,7 +2,8 @@ import { products } from '../../utils/data'
 
 const initialState = {
     products: products,
-    carts: []
+    carts: [],
+    menu: 'makanan',
 }
 
 const productReducer = (state = initialState, action) => {
@@ -19,7 +20,9 @@ const productReducer = (state = initialState, action) => {
                     carts: [...state.carts, newItemCart],
                 }
             } else {
-                return state
+                alert('Item already in cart!');
+
+                return state;
             }
 
         case "INCREMENT":
@@ -68,6 +71,12 @@ const productReducer = (state = initialState, action) => {
             return {
                 ...state,
                 carts: []
+            }
+
+        case "CHANGEMENU":
+            return {
+                ...state,
+                menu: payload
             }
 
         default:

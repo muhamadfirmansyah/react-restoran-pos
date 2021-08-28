@@ -31,3 +31,10 @@ export const resetCart = () => {
         type: "RESET"
     }
 }
+
+export const changeMenu = menu => {
+    return {
+        type: "CHANGEMENU",
+        payload: menu
+    }
+}

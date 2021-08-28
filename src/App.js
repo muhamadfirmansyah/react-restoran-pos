@@ -32,7 +32,7 @@ const ProductContainer = styled.div`
   padding: 0.5rem 0.5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 1.8rem;
 `
 
 const CartContainer = styled.div`
@@ -43,7 +43,8 @@ const CartContainer = styled.div`
 
 const App = () => {
 
-  const products = useSelector(state => state.product.products);
+  const activeMenu = useSelector(state => state.product.menu);
+  const products = useSelector(state => state.product.products.filter(item => item.category === activeMenu));
   const carts = useSelector(state => state.product.carts);
 
   return (

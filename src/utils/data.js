@@ -10,7 +10,7 @@ export const products = [
         id: 2,
         name: "Roasted Pork Belly",
         image: require("../assets/foods/makanan2.png"),
-        category: "makanan",
+        category: "minuman",
         price: 14000
     },
     {
@@ -24,7 +24,7 @@ export const products = [
         id: 4,
         name: "Chocolate Cake",
         image: require("../assets/foods/makanan4.png"),
-        category: "makanan",
+        category: "favourite",
         price: 15000
     },
     {
@@ -73,7 +73,7 @@ export const products = [
         id: 11,
         name: "Noodles With Tomato",
         image: require("../assets/foods/makanan1.png"),
-        category: "makanan",
+        category: "cemilan",
         price: 13000
     },
     {
