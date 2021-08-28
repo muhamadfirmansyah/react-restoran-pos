@@ -22,11 +22,11 @@ const WarningButton = styled(MyButton)`
 background: ${props => props.theme.tertiary }
 `
 
-const Button = ({ primary, action }) => {
+const Button = ({ primary, action, text }) => {
     if (primary) {
-        return <PrimaryButton onClick={action}>Selesai</PrimaryButton>
+        return <PrimaryButton onClick={action}>{text}</PrimaryButton>
     } else {
-        return <WarningButton>Cancel</WarningButton>
+        return <WarningButton onClick={action}>{text}</WarningButton>
     }
 }
 
